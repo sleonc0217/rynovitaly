@@ -1,0 +1,149 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.content-logo{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    width: 400px;
+    height: 90px;
+}
+.logo{
+    width: 120px;
+    height: 150px;
+    margin-left: 10px; 
+}
+.marca{
+    
+    font-size: 28px;
+
+}
+.forma{
+background-color: red;
+border-radius: 25% 26% 100% 0% / 0% 0% 62% 25%;   
+width: 100%;
+height: 500px;
+ background: rgb(180,128,58);
+background: linear-gradient(90deg, rgba(180,128,58,1) 0%, rgba(196,0,0,1) 50%, rgba(252,148,0,1) 100%); 
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 5%;
+    font-weight: bold;
+    width: max-content;
+    
+}
+
+ul li{
+    display: inline-block;
+    padding: 0px;
+    padding: 0px 15px;
+}
+ul{
+    margin-right: 30px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    filter: drop-shadow(8px 8px 8px rgb(0, 0, 0)) ;
+    transition: all 0.7s;
+    font-size: 18px;
+}
+a:hover{
+    color: #000;
+}
+.ingreso{
+    border:  2px #fff solid;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.context-principal{
+    position: absolute;
+left: 186px;
+top: 209px;
+    width: 440px;
+    height: 300px;
+}
+.texto-principal{
+font-weight: bold;
+font-size: 3em;
+text-shadow: 35.706px 43.1403px 306px rgba(0, 0, 0, 0.0818519), 23.1428px 27.9613px 179.208px rgba(0, 0, 0, 0.133481), 13.7534px 16.617px 97.4667px rgba(0, 0, 0, 0.17), 7.1412px 8.62805px 49.725px rgba(0, 0, 0, 0.206519), 2.90938px 3.51513px 24.9333px rgba(0, 0, 0, 0.258148), 0.661222px 0.798894px 12.0417px rgba(0, 0, 0, 0.34);
+}
+
+.btn-promo{
+position: absolute;
+width: 228px;
+height: 55px;
+left: 179px;
+top: 408px;
+background-color: #000;
+color: #fff;
+border: none;
+font-size: 20px;
+border-radius: 10px;
+box-shadow: #fff 0px 3px 8px;
+cursor: pointer;
+}
+.btn-sus{
+position: absolute;
+width: 228px;
+height: 55px;
+left: 420px;
+top: 408px;
+background-color: #000;
+color: #fff;
+border: none;
+font-size: 20px;
+border-radius: 10px;
+box-shadow: #fff 0px 3px 8px;
+cursor: pointer;
+}
+
+.prote{
+position: absolute;
+width: 501px;
+height: 501px;
+left: 900px;
+top: 100px;
+filter: drop-shadow(10px 10px 10px rgb(0, 0, 0)) ;
+}
+.pre-entreno{
+position: absolute;
+width: 218px;
+height: 301px;
+left: 820px;
+top: 275px;
+z-index: 2;
+filter: drop-shadow(10px 10px 10px rgb(0, 0, 0)) ;
+}
+
+footer{
+    background-color: #000;
+    width: 100%;
+     height: 60px;
+     position: absolute;
+     bottom: 0;
+     color: #fff;
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.p1{
+    margin-left: 25%;
+}
+.p2{
+    margin-right: 25%;
+}

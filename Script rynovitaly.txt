@@ -1,0 +1,76 @@
+/*Creamos el usuario y contraseña*/
+create user 'user_rynovitaly'@'%' identified by 'RynoVitaly';
+
+/*Creamos el esquema de la base de datos*/
+CREATE SCHEMA rynovitaly;
+/*Asignamos provilegios al usuario para el nuevo esquema*/
+grant all privileges on rynovitaly.* to 'user_rynovitaly'@'%';
+flush privileges;
+
+
+use rynovitaly;
+
+create table credito(
+	id_credito int primary key,
+    limite decimal (7,2)
+);
+
+create table usuario(
+	id_usuario int primary key,
+    nombre varchar (20),
+    apellidos varchar (30),
+    email varchar(20),
+    contrasena varchar(20),
+    telefono int(8),
+    id_credito int ,
+    administrador boolean,
+    foreign key fk_usuario_credito (id_credito) references credito(id_credito) 
+);
+
+create table factura(
+	id_factura int primary key,
+    id_usuario int ,
+    fecha date,
+    total decimal (7,2),
+    foreign key fk_factura_usuario (id_usuario) references usuario(id_usuario)
+    
+);
+
+create table categoria(
+id_categoria int primary key,
+nombre varchar(20),
+descripcion varchar (100)
+
+);
+
+create table codigo(
+	id_codigo int primary key,
+    codigo varchar (10),
+    descuento int (2)
+
+
+);
+
+create table producto(
+id_producto int primary key,
+nombre varchar(30),
+descripcion longblob,
+precio decimal (7,2),
+unidades int,
+id_categoria int,
+marca varchar(30),
+foreign key fk_producto_categoria (id_categoria) references categoria(id_categoria) 
+
+);
+
+create table venta(
+	id_venta int primary key,
+    id_factura int,
+    id_producto int, 
+    id_codigo int,
+    precio decimal (7,2),
+    cantidad int,
+foreign key fk_venta_factura (id_factura) references factura(id_factura),
+foreign key fk_venta_producto (id_producto) references producto(id_producto),
+foreign key fk_venta_codigo (id_codigo) references codigo(id_codigo)
+);
