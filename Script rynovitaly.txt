@@ -39,7 +39,8 @@ create table factura(
 create table categoria(
 id_categoria int primary key,
 nombre varchar(20),
-descripcion varchar (100)
+descripcion varchar (100),
+activo boolean
 
 );
 
@@ -59,6 +60,7 @@ precio decimal (7,2),
 unidades int,
 id_categoria int,
 marca varchar(30),
+activo boolean,
 foreign key fk_producto_categoria (id_categoria) references categoria(id_categoria) 
 
 );

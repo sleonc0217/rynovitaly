@@ -10,25 +10,7 @@
     <title>Ryno Vitaly</title>
 </head>
 <body>
-    <header>
-        
-        <div class="content-logo">
-            <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/ryno.png?alt=media&token=d4e82120-8df5-421b-9041-0f96f7d5a5b3" alt="logo"/>
-            <h2 class="marca">Ryno Vitaly</h2>
-        </div>
-        
-        <nav class="nav">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Tienda</a></li>
-                <li><a href="#">Carrito</a></li>
-                <li><a href="#">Puntos de venta</a></li>
-                <li><a href="#">Contactenos</a></li>
-                <li class="ingreso"><a href="#">Ingresar o Registrarse</a></li>
-                </ul>
-        </nav>
-        
-    </header>
+   <header th:replace="layout/plantilla :: header"/>
     <div class="forma"></div>
     <div class="context-principal">
          <h1 class="texto-principal">Expande tu potencial deportivo con Ryno Vitaly!</h1>
@@ -42,9 +24,6 @@
     <img class="prote" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/proteina_1_-removebg-preview.png?alt=media&token=eabda1a6-d0e7-4b80-8803-8084ec623956" alt="pre-entreno"/>
 
     
-    <footer>
-        <p class="p1">RinoVitaly © 2022 Derechos Reservados </p>
-        <p class="p2">Diseñado por CodeLabs</p>
-    </footer>
+    <footer th:replace="layout/plantilla :: footer"/>
 </body>
 </html>
