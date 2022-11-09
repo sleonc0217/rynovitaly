@@ -213,3 +213,50 @@ th, td {
     border: none;
     margin-left: 1cm;
 }
+
+form{
+  position: absolute;
+   top: 30%;
+   left: 27%;
+   width: 90%;
+   background-color: #E5BE01;
+   width: 50%;
+   height: 8cm;
+   border-radius:10px;
+   padding-top: 0.5cm;
+   
+}
+input{
+    
+    margin-bottom: 5px;
+    margin-left: 10%;
+    border: none;
+    border-radius: 10px;
+    background-color: orange;
+    width: 30%;
+    height: 30px;
+    vertical-align: central;
+    color:#fff;
+}
+.nombre{
+    margin-right: 1%;
+}
+.apellidos{
+    margin-right: -0.5%;
+}
+.email{
+    margin-right: 3%;
+}
+
+.contrasena{
+    margin-right: -3.5%;
+}
+.administrador{
+    margin-right: -5.5%;
+}
+
+.guardar{
+    margin-top: 5.5%;
+    margin-left: 35%;
+    background-color: green;
+}

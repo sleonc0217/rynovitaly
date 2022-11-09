@@ -76,3 +76,10 @@ foreign key fk_venta_factura (id_factura) references factura(id_factura),
 foreign key fk_venta_producto (id_producto) references producto(id_producto),
 foreign key fk_venta_codigo (id_codigo) references codigo(id_codigo)
 );
+
+
+INSERT INTO CREDITO (ID_CREDITO, LIMITE)
+VALUES (1,10000);
+
+INSERT INTO USUARIO (ID_USUARIO, NOMBRE, APELLIDOS, EMAIL, CONTRASENA, TELEFONO, ID_CREDITO, ADMINISTRADOR)
+VALUES (1,'Sebastian', 'Leon Cascante', 'test@test.com','1234', '88888888', 1, true);
