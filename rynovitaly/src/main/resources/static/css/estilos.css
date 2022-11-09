@@ -219,12 +219,15 @@ form{
    top: 30%;
    left: 27%;
    width: 90%;
-   background-color: #E5BE01;
+   background-color: #F86801;
    width: 50%;
    height: 8cm;
    border-radius:10px;
    padding-top: 0.5cm;
    
+}
+label{
+    color:#fff;
 }
 input{
     
@@ -232,11 +235,11 @@ input{
     margin-left: 10%;
     border: none;
     border-radius: 10px;
-    background-color: orange;
+    background-color: #fff;
     width: 30%;
     height: 30px;
     vertical-align: central;
-    color:#fff;
+    color:#000;
 }
 .nombre{
     margin-right: 1%;
@@ -259,4 +262,6 @@ input{
     margin-top: 5.5%;
     margin-left: 35%;
     background-color: green;
+    color:#FFF;
+    font-size: 17px;
 }
