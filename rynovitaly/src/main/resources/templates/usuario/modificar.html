@@ -22,32 +22,31 @@
             method="post"
             th:object="${usuario}">
             
-            
             <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
             
             
             
-            <label class="nombre" for="nombre">Nombre</label>
+            <label  for="nombre">[[#{cliente.nombre}]]</label>
             <input type="text" name="nombre" th:field="*{nombre}">
             <br/>
             
-            <label class="apellidos" for="apellidos">Apellidos</label>
+            <label  for="apellidos">[[#{cliente.apellidos}]]</label>
             <input type="text" name="apellidos" th:field="*{apellidos}">
             <br/>
             
-            <label class="email" for="email">Email</label>
+            <label for="email">[[#{cliente.email}]]</label>
             <input type="email" name="email" th:field="*{email}">
             <br/>
             
-            <label class="contrasena" for="contrasena">Contraseña</label>
+            <label  for="contrasena">[[#{cliente.contraseña}]]</label>
             <input type="password" name="contrasena" th:field="*{contrasena}">
              <br/>  
                 
-             <label class="telefono" for="telefono">Telefono</label>
+             <label for="telefono">[[#{cliente.telefono}]]</label>
             <input type="number" name="telefono" th:field="*{telefono}">
             <br/>
             
-             <label class="administrador" for="administrador">Administrador</label>
+             <label  for="administrador">[[#{cliente.administrador}]]</label>
             <input type="text" name="administrador" th:field="*{administrador}">
             <br/>
             
@@ -56,7 +55,7 @@
           
             
             
-            
+            //<button type="submit" th:text="#{accion.guardar}"/>
             <input class="guardar" type="submit" name="guardar" value="Guardar"/>
             
         </form>
