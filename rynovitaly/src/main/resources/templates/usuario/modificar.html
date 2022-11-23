@@ -6,8 +6,8 @@
         <title>Dashboard - Usuario</title>
         <meta charset="UTF-8">
             <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
-     <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
        <header th:replace="layout/plantilla :: header"/>
@@ -16,8 +16,8 @@
         
         
         
-        <a th:href="@{/}">Regresar</a>
-        <hr/>
+        <a th:href="@{/usuario/listado}">Regresar</a>
+        <br/>
         <form th:action="@{/usuario/guardar}"
             method="post"
             th:object="${usuario}">
@@ -26,30 +26,31 @@
             
             
             
-            <label  for="nombre">[[#{cliente.nombre}]]</label>
+            <label  for="nombre">[[#{usuario.nombre}]]</label>
             <input type="text" name="nombre" th:field="*{nombre}">
             <br/>
             
-            <label  for="apellidos">[[#{cliente.apellidos}]]</label>
+            <label  for="apellidos">[[#{usuario.apellidos}]]</label>
             <input type="text" name="apellidos" th:field="*{apellidos}">
             <br/>
             
-            <label for="email">[[#{cliente.email}]]</label>
+            <label for="email">[[#{usuario.correo}]]</label>
             <input type="email" name="email" th:field="*{email}">
             <br/>
             
-            <label  for="contrasena">[[#{cliente.contraseña}]]</label>
+            <label  for="contrasena">[[#{usuario.contraseña}]]</label>
             <input type="password" name="contrasena" th:field="*{contrasena}">
              <br/>  
                 
-             <label for="telefono">[[#{cliente.telefono}]]</label>
+             <label for="telefono">[[#{usuario.telefono}]]</label>
             <input type="number" name="telefono" th:field="*{telefono}">
             <br/>
             
-             <label  for="administrador">[[#{cliente.administrador}]]</label>
+             <label  for="administrador">[[#{usuario.administrador}]]</label>
             <input type="text" name="administrador" th:field="*{administrador}">
             <br/>
             
+          
             
             
           

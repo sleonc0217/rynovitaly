@@ -2,7 +2,7 @@
 <html
     xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Dashboard - Categorias</title>
+        <title>Dashboard - addCarrito</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
@@ -15,22 +15,24 @@
         
     
         
-        <div th:if="${categorias != null and !categorias.empty}">
+        <div th:if="${articulos != null and !articulos.empty}">
             <div class="forma"></div>
             
             <table>
                 <thead>
                     <tr>
                         <th>Descripcion</th>
-                        <th>Activa</th>
+                        <th>Precio</th>
+                        <th>Comprar</th>
                       
                         
                     </tr>
                 </thead>
                 <tbody>
-                    <tr  th:each="categoria : ${categorias}">
-                        <td> [[${categoria.descripcion}]]</td>
-                        <td><input type="checkbox" name="activa" th:cheked="${categoria.activo}" disabled="true"</td>
+                    <tr  th:each="articulo : ${articulos}">
+                        <td> [[${articulo.descripcion}]]</td>
+                        <td> [[${articulo.precio}]]</td>
+                        <td><a th:href="@{/carrito/agregar/} + ${articulo.idArticulo}">Agregar</a></td>
                        
                         <td><a th:href="@{categoria/eliminar} + ${categoria.idCategoria}"> <button class="eliminar" >  Eliminar </button> </td>
                         <td><a th:href="@{categoria/modificar} + ${categoria.idCategoria}"> <button class="editar" > Editar   </button></td>
@@ -38,11 +40,11 @@
                 </tbody>
             </table>
             
-            <button class="agregar"> <a th:href="@{/categoria/nuevo}">Nuevo Usuario</a> </button>
+            <button class="agregar"> <a th:href="@{/articulos/nuevo}">Nuevo Usuario</a> </button>
             
         </div>
-        <div th:if="${categorias ==null or categorias.empty}">
-            <h2>No se tienen usuarios que mostrar</h2>
+        <div th:if="${articulos ==null or articulos.empty}">
+            <h2>No se tienen articulos que mostrar</h2>
         </div>
         
         <footer th:replace="layout/plantilla :: footer"/>

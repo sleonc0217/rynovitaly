@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Dashboard - Usuario</title>
+        <meta charset="UTF-8">
+            <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+            <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       <header th:replace="layout/plantilla :: header"/>
+           <div class="forma"></div>
+        
+        
+        
+        
+        <a th:href="@{/categoria/listado}">Regresar</a>
+        <br/>
+        <form th:action="@{/categoria/guardar}"
+            method="post"
+            th:object="${categoria}">
+            
+            <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
+            
+            
+            
+            <label  for="description">[[#{categoria.descripcion}]]</label>
+            <input type="text" name="description" th:field="*{description}">
+            <br/>
+            
+            <label  for="activa">[[#{categoria.activo}]]</label>
+            <input type="checkbox" name="activa" th:field="*{activa}">
+            <br/>
+       
+            
+          
+            
+            
+            //<button type="submit" th:text="#{accion.guardar}"/>
+            <input class="guardar" type="submit" name="guardar" value="Guardar"/>
+            
+        </form>
+        
+        
+        
+        
+        
+        <div th:if="${usuarios != null and !usuarios.empty}">
+            
+       
+            
+        </div>
+        
+        
+        
+        
+                <footer th:replace="layout/plantilla :: footer"/>
+
+    </body>
+</html>
