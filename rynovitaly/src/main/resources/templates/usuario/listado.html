@@ -26,7 +26,7 @@
                         <th>Email</th>
                         <th>Contraseña</th>
                         <th>Telefono</th>
-                        <th>Administrador</th>
+                         <th>Limite</th>
                         <th>Eliminar</th>
                         <th>Editar</th>
                         
@@ -39,9 +39,9 @@
                         <td>[[${usuario.email}]]</td>
                         <td>[[${usuario.contrasena}]]</td>
                         <td>[[${usuario.telefono}]]</td>
-                        <td>[[${usuario.administrador}]]</td>
-                        <td><a th:href="@{eliminarUsuario/} + ${usuario.idUsuario}"> <button class="eliminar" >  Eliminar </button> </td>
-                        <td><a th:href="@{modificar/} + ${usuario.idUsuario}"> <button class="editar" > Editar   </button></td>
+                         <td style="text-align: right">[[${#numbers.formatDecimal(usuario.credito.limite,3,2)}]]</td>
+                        <td><a th:href="@{/usuario/eliminar/} + ${usuario.idUsuario}"> <button class="eliminar" >  Eliminar </button> </td>
+                        <td><a th:href="@{/usuario/modificar/} + ${usuario.idUsuario}"> <button class="editar" > Editar   </button></td>
                     </tr>
                 </tbody>
             </table>

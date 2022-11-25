@@ -28,7 +28,7 @@ public class ProductoServiceImpl implements ProductoService{
     //Retorna la lista de productos
     @Override
     @Transactional(readOnly=true)
-    public List<Producto> getProducto(boolean activos){
+    public List<Producto> getProductos(boolean activos){
         var lista=(List<Producto>)productoDao.findAll();
         
         
@@ -41,9 +41,9 @@ public class ProductoServiceImpl implements ProductoService{
     }
     
     //Dado un producto.id se busca en la tabla y se retorna todo el objeto producto
-      @Override
+    @Override
     @Transactional(readOnly=true)
-    public Producto getProducto(Producto producto){
+    public Producto getProductos(Producto producto){
         
         
         return productoDao.findById(producto.getIdProducto()).orElse(null);
@@ -67,6 +67,8 @@ public class ProductoServiceImpl implements ProductoService{
    public void delete (Producto producto){
        productoDao.delete(producto);
    }
+
+   
     
     
     

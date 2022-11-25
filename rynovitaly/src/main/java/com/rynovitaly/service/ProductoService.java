@@ -14,10 +14,10 @@ public interface ProductoService {
     
     
     //Retorna la lista de productos
-    public List<Producto> getProducto(boolean activos);
+    public List<Producto> getProductos(boolean activos);
     
     //Dado un producto.id se busca en la tabla y se retorna todo el objeto producto
-    public Producto getProducto(Producto producto);
+    public Producto getProductos(Producto producto);
     
     
     

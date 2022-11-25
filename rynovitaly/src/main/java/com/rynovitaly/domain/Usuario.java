@@ -23,7 +23,6 @@ public class Usuario implements Serializable{
     private String email;
     private String contrasena;
     private int telefono;
-    private  boolean administrador;
 
     @JoinColumn(name="id_credito",referencedColumnName="id_credito")
     @ManyToOne
@@ -32,13 +31,12 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellidos, String email, String contrasena, int telefono, boolean administrador, Credito credito) {
+    public Usuario(String nombre, String apellidos, String email, String contrasena, int telefono, Credito credito) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.contrasena = contrasena;
         this.telefono = telefono;
-        this.administrador = administrador;
         this.credito = credito;
     }
     

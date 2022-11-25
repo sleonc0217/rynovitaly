@@ -16,15 +16,15 @@
         
         
         
-        <a th:href="@{/}">Regresar</a>
-        <hr/>
+        <a th:href="@{/listado/usuario}">Regresar</a>
+
         <form th:action="@{/usuario/guardar}"
             method="post"
             th:object="${usuario}">
             
             
             <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
-            
+            <input type="hidden" name="idCredito" th:field="*{credito.idCredito}"/>
             
             
             <label class="nombre" for="nombre">Nombre</label>
@@ -47,9 +47,12 @@
             <input type="number" name="telefono" th:field="*{telefono}">
             <br/>
             
-             <label class="administrador" for="administrador">Administrador</label>
-            <input type="text" name="administrador" th:field="*{administrador}">
-            <br/>
+            
+             <label for="limite">Limite de credito</label>
+             <input type="number" name="limite" th:field="*{credito.limite}"/>
+              <br/>
+ 
+
             
             
             
