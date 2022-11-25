@@ -9,26 +9,24 @@ flush privileges;
 
 
 use rynovitaly;
-
 create table credito(
-	id_credito int primary key,
+	id_credito int primary key AUTO_INCREMENT,
     limite decimal (7,2)
 );
 
 create table usuario(
-	id_usuario int primary key,
+	id_usuario int primary key AUTO_INCREMENT,
     nombre varchar (20),
     apellidos varchar (30),
     email varchar(20),
     contrasena varchar(20),
     telefono int(8),
     id_credito int ,
-    administrador boolean,
     foreign key fk_usuario_credito (id_credito) references credito(id_credito) 
 );
 
 create table factura(
-	id_factura int primary key,
+	id_factura int primary key AUTO_INCREMENT,
     id_usuario int ,
     fecha date,
     total decimal (7,2),
@@ -37,15 +35,14 @@ create table factura(
 );
 
 create table categoria(
-id_categoria int primary key,
+id_categoria int primary key AUTO_INCREMENT,
 nombre varchar(20),
-descripcion varchar (100),
-activo boolean
+descripcion varchar (100)
 
 );
 
 create table codigo(
-	id_codigo int primary key,
+	id_codigo int primary key AUTO_INCREMENT,
     codigo varchar (10),
     descuento int (2)
 
@@ -53,20 +50,19 @@ create table codigo(
 );
 
 create table producto(
-id_producto int primary key,
+id_producto int primary key AUTO_INCREMENT,
 nombre varchar(30),
 descripcion longblob,
 precio decimal (7,2),
 unidades int,
 id_categoria int,
 marca varchar(30),
-activo boolean,
 foreign key fk_producto_categoria (id_categoria) references categoria(id_categoria) 
 
 );
 
 create table venta(
-	id_venta int primary key,
+	id_venta int primary key AUTO_INCREMENT,
     id_factura int,
     id_producto int, 
     id_codigo int,
@@ -78,8 +74,15 @@ foreign key fk_venta_codigo (id_codigo) references codigo(id_codigo)
 );
 
 
-INSERT INTO CREDITO (ID_CREDITO, LIMITE)
-VALUES (1,10000);
 
-INSERT INTO USUARIO (ID_USUARIO, NOMBRE, APELLIDOS, EMAIL, CONTRASENA, TELEFONO, ID_CREDITO, ADMINISTRADOR)
-VALUES (1,'Sebastian', 'Leon Cascante', 'test@test.com','1234', '88888888', 1, true);
+
+
+
+insert into usuario (id_usuario, nombre, apellidos, email, contrasena, telefono, id_credito)
+values ('1','Sebastian', 'Leon Cascante', 'sl@gmail.com', '1234', 88888888, '1')
+
+
+
+
+insert into credito (id_credito, limite)
+values ('1', '10000')
