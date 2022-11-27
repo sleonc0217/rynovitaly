@@ -12,19 +12,19 @@ public class Categoria implements Serializable{
     
     private static final long serialVersionUID= 1L;
     
-    @Id
+
+    
+
+
+
+        @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_categoria")
     private Long idCategoria;
-    
-    private String nombre;
+        private String nombre;
     private String descripcion;
-    private boolean activo;
 
 
-
-    
-    
     
     
     
@@ -34,11 +34,12 @@ public class Categoria implements Serializable{
         
     }
 
-    public Categoria(String nombre, String descripcion, boolean activo) {
+    public Categoria(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.activo = activo;
+
     }
+
 
   
    

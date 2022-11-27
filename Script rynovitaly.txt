@@ -57,6 +57,7 @@ precio decimal (7,2),
 unidades int,
 id_categoria int,
 marca varchar(30),
+activo boolean,
 foreign key fk_producto_categoria (id_categoria) references categoria(id_categoria) 
 
 );

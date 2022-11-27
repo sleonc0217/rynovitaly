@@ -9,70 +9,38 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class CategoriaServiceImpl implements CategoriaService{
-    
-    
+public class CategoriaServiceImpl implements CategoriaService {
+
     @Autowired
     private CategoriaDao categoriaDao;
     
     
+
     @Override
-    @Transactional(readOnly=true)
-    public List<Categoria> getCategorias(boolean activos){
-        
-        
-        
-           var lista=(List<Categoria>)categoriaDao.findAll();
-        
-        
-        if(activos){
-            lista.removeIf(e -> !e.isActivo());
-        }
-        
-        
-        return lista;
-        
-        
-    }
-    
-      @Override
-    @Transactional(readOnly=true)
-    public Categoria getCategorias(Categoria categoria){
-        
-        
+    @Transactional(readOnly = true)
+    public Categoria getCategorias(Categoria categoria) {
         return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
-        
     }
-    
-    
 
     @Override
     @Transactional
-    public void save(Categoria categoria){
+    public void save(Categoria categoria) {
         categoriaDao.save(categoria);
     }
-    
-    
 
-   @Override
-   @Transactional
-   public void delete (Categoria categoria){
-       categoriaDao.delete(categoria);
-   }
+    @Override
+    @Transactional
+    public void delete(Categoria categoria) {
+        categoriaDao.delete(categoria);
+    }
+
+    @Override
+    public List<Categoria> getCategorias() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
 }

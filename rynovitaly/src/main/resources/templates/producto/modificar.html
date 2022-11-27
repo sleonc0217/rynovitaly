@@ -3,7 +3,7 @@
     xmlns:th="http://www.thymeleaf.org"
     xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Dashboard - Usuario</title>
+        <title>Dashboard - Producto</title>
         <meta charset="UTF-8">
             <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
      <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
@@ -16,42 +16,40 @@
         
         
         
-           <a href="/usuario/listado"><button class="regresar" >Regresar</button></a>
+           <a href="/producto/listado"><button class="regresar" >Regresar</button></a>
 
-        <form th:action="@{/usuario/guardar}"
+        <form th:action="@{/producto/guardar}"
             method="post"
-            th:object="${usuario}">
-            
-            
-            <input type="hidden" name="idUsuario" th:field="*{idUsuario}"/>
-            <input type="hidden" name="idCredito" th:field="*{credito.idCredito}"/>
-            
-            
+            th:object="${producto}">
+            <input type="hidden" name="idProducto" th:field="*{idProducto}"/>
+       
+                 
             <label class="nombre" for="nombre">Nombre</label>
             <input type="text" name="nombre" th:field="*{nombre}">
             <br/>
             
-            <label class="apellidos" for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" th:field="*{apellidos}">
+            <label class="descripcion" for="descripcion">Descripcion</label>
+            <input type="text" name="descripcion" th:field="*{descripcion}">
             <br/>
             
-            <label class="email" for="email">Email</label>
-            <input type="email" name="email" th:field="*{email}">
+            <label class="precio" for="precio">Precio</label>
+            <input type="number" name="precio" th:field="*{Precio}">
             <br/>
             
-            <label class="contrasena" for="contrasena">Contraseña</label>
-            <input type="password" name="contrasena" th:field="*{contrasena}">
+            <label class="unidades" for="unidades">Unidades</label>
+            <input type="number" name="unidades" th:field="*{unidades}">
              <br/>  
                 
-             <label class="telefono" for="telefono">Telefono</label>
-            <input type="number" name="telefono" th:field="*{telefono}">
+             <label class="marcas" for="marca">Marca</label>
+            <input type="text" name="marca" th:field="*{marca}">
             <br/>
             
             
-             <label for="limite">Limite de credito</label>
-             <input type="number" name="limite" th:field="*{credito.limite}"/>
+             <label for="activo">Activo</label>
+             <input type="checkbox" name="activo" th:field="*{activo}"/>
               <br/>
  
+              
 
             
             
@@ -68,7 +66,7 @@
         
         
         
-        <div th:if="${usuarios != null and !usuarios.empty}">
+        <div th:if="${productos != null and !productos.empty}">
             
        
             
