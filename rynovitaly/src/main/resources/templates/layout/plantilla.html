@@ -3,67 +3,73 @@
 
 
 <html    xmlns:th="http://www.thymeleaf.org"
-    xmlns="http://www.w3.org/1999/xhtml">
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>    
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>     
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script> 
     </head>
+    
     <body>
         
      <header th:fragment="header">
         
         <div class="content-logo">
             <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/ryno.png?alt=media&token=d4e82120-8df5-421b-9041-0f96f7d5a5b3" alt="logo"/>
-            <h2 class="marca">Ryno Vitaly</h2>
+            <h2 class="marca">[[#{aplicacion.titulo}]]</h2>
         </div>
         <nav class="nav">
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/producto/listado">Tienda</a></li>
-                <li><a href="#">Carrito</a></li>
-                <li><a href="/puntosDeVenta.html">Puntos de venta</a></li>
-                <li><a href="#">Contactenos</a></li>
-                <li><a href="/menuAdmin.html">Dashboard</a></li>
+            <ul class="navbar-nav" sec:authorize="hasRole('ROLE_VENDEDOR')">
+                <li>  <form method="POST" th:action="@{/logout}">
+                                    <a href="#" onclick="this.parentNode.submit();" >
+                                        <i class="fas fa-user-times"></i> [[#{plantilla.logout}]]
+                                    </a>
+                                </form>
+                                </li>
+                <li><a href="/">[[#{accion.Inicio}]]</a></li>
+                <li><a href="/producto/listado">[[#{accion.Tienda}]]</a></li>
+                <li><a href="#">[[#{accion.Carrito}]]</a></li>
+                <li><a href="/puntosDeVenta.html">[[#{accion.PuntosVenta}]]</a></li>
+                <li><a href="#">[[#{accion.Contactenos}]]</a></li>
+     
+                <li class="nav-item px-2"  sec:authorize="hasRole('ROLE_ADMIN')"><a href="/menuAdmin.html">Dashboard_adm</a></li>
+           
+                
+               
+                <!-- muestra q usuario esta logueado -->
+  
                 <li class="ingreso"><a href="#">Ingresar o Registrarse</a></li>
                 </ul>
+            
+       
+                           
+                           
         </nav>
+         
+           
+         
+         
+         
         
     </header>
         <div class="forma"></div>
         
         
         
-        
+       
         
         
 
-
-
-
-
-
-
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         <footer th:fragment="footer">
-        <p class="p1">RinoVitaly © 2022 Derechos Reservados </p>
-        <p class="p2">Diseñado por CodeLabs</p>
+        <p class="p1">[[#{plantilla.derechos}]] </p>
+        <p class="p2">[[#{plantilla.firma}]]</p>
+        <a th:href="@{/(lang=es)}">ES</a> | 
+         <a th:href="@{/(lang=en)}">EN</a>
     </footer>
         
     </body>
