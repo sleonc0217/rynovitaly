@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -17,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     
-            auth.inMemoryAuthentication()
+          /*  auth.inMemoryAuthentication()
                     .withUser("adm")
                     .password("{noop}789")
                     .roles("ADMIN","VENDEDOR","USER")
@@ -28,7 +29,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                     .and()
                     .withUser("user")
                     .password("{noop}123")
-                    .roles("user");
+                    .roles("user");*/
+          
+         /*  auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());*/
 
     }
     //El siguiente metodo funciona para realizar la autorizacion(accesso q poseo) de accesoss al sitio web
@@ -50,12 +53,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         "/cliente/listado")
                 .hasAnyRole("ADMIN", "VENDEDOR")
                 .antMatchers("/")
-                .hasAnyRole("ADMIN", "VENDEDOR", "USER")
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .and()
-                .exceptionHandling().accessDeniedPage("/errores/403");
+                .hasAnyRole("ADMIN", "VENDEDOR")
+                .antMatchers("/","/carrito/**")
+                .permitAll()
+                .antMatchers("/facturar/carrito")
+                .authenticated()
+                    
+                .and().formLogin().loginPage("/login")
+                
+                
+                .and().exceptionHandling().accessDeniedPage("/errores/403");
+                    
+                    
+                    
+                    
+              
         
         
     }

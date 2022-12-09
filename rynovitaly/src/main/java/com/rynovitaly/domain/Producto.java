@@ -23,6 +23,9 @@ public class Producto implements Serializable{
     private String marca;
     private boolean activo;
     
+    @Column(name="ruta_imagen")
+    private String rutaImagen;
+    
     
         @JoinColumn(name="id_categoria",referencedColumnName="id_categoria")
     @ManyToOne
