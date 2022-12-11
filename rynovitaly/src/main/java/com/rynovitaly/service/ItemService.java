@@ -4,7 +4,7 @@
  */
 package com.rynovitaly.service;
 
-import com.tienda.domain.Item;
+import com.rynovitaly.domain.Item;
 import java.util.ArrayList;
 import java.util.List;
 

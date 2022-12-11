@@ -6,21 +6,21 @@ import lombok.Data;
 @Data
 public class Item extends Producto{
     
-    private int cantidad; //almacenar la cantidad de items de un articulo
+    private int cantidad; //almacenar la cantidad de items de un producto
     
     public Item() {
     }
     
-    public Item (Producto articulo) {
-        super.setIdProducto(articulo.getIdProducto());
+    public Item (Producto producto) {
+        super.setIdProducto(producto.getIdProducto());
         super.setCategoria(producto.getCategoria());
-        /*super.setIdCategoria(articulo.getIdCategoria());*/
-        super.setDescripcion(articulo.getDescripcion());
-        super.setDetalle(articulo.getDetalle());
-        super.setPrecio(articulo.getPrecio());
-        super.setExistencias(articulo.getExistencias());
-        super.setActivo(articulo.isActivo());
-        super.setRutaImagen(articulo.getRutaImagen());
+        /*super.setIdCategoria(producto.getIdCategoria());*/
+        super.setDescripcion(producto.getDescripcion());
+        super.setDetalle(producto.getDetalle());
+        super.setPrecio(producto.getPrecio());
+        super.setExistencias(producto.getExistencias());
+        super.setActivo(producto.isActivo());
+        super.setRutaImagen(producto.getRutaImagen());
         this.cantidad = 0;
 }
     

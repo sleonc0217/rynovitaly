@@ -22,7 +22,7 @@ public class CarritoController {
     @Autowired
     private ItemService itemService;
     @Autowired
-    private ProductoService articuloService;
+    private ProductoService productoService;
     
     //para el carrito
     @GetMapping("/carrito/listado")
@@ -39,13 +39,13 @@ public class CarritoController {
     
     }
     
-    //para agregar articulos al carrito
+    //para agregar productos al carrito
     @GetMapping("/carrito/agregar/{idProducto}")
-    public ModelAndView agregararticulo (Model model , Item item) {
+    public ModelAndView agregarproducto (Model model , Item item) {
         Item item2 = itemService.getItem(item);
         if(item2==null){
-            Producto articulo = articuloService.getProducto(item);
-            item2 = new Item(articulo);
+            Producto producto = productoService.getProducto(item);
+            item2 = new Item(producto);
         }
         itemService.save(item2);
         var lista = itemService.getItems();
@@ -88,7 +88,7 @@ public class CarritoController {
     
     }
     
-    //para facturar los articulos del carrto ..no implementado..
+    //para facturar los productos del carrto ..no implementado..
        @GetMapping("/facturar/carrito")
     public String facturarCarrito ( ) {
         itemService.facturar();

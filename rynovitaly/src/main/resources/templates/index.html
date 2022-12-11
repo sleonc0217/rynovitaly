@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://wwww.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +11,17 @@
     <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
      <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-    <title>Ryno Vitaly</title>
+    <title>[[#{aplicacion.titulo}]]</title>
 </head>
 <body>
    <header th:replace="layout/plantilla :: header"/>
     <div class="forma"></div>
     <div class="context-principal">
-         <h1 class="texto-principal">Expande tu potencial deportivo con Ryno Vitaly!</h1>
+         <h1 class="texto-principal">[[#{index.texto_principal}]]</h1>
     </div>
    
-    <button class="btn-promo">Ver promo!</button>
-    <button class="btn-sus">Suscribirme</button>
+    <button class="btn-promo">[[#{index.promo}]]</button>
+    <button class="btn-sus">[[#{index.subcripcion}]]</button>
     
     
     <img class="pre-entreno" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/PreEntreno-removebg-preview(1).png?alt=media&token=ddbe22ab-2a36-4265-832d-297791efa78a" alt="pre-entreno"/>

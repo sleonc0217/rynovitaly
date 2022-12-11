@@ -2,7 +2,7 @@
 package com.rynovitaly.service;
 
 
-import com.tienda.domain.Item;
+import com.rynovitaly.domain.Item;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -24,7 +24,7 @@ public class ItemServicelmpl implements ItemService {
     @Override
     public Item getItem(Item item) {
         for(Item c : listaItems) {
-            if(Objects.equals(c.getIdArticulo(),item.getIdArticulo())){
+            if(Objects.equals(c.getIdProducto(),item.getIdProducto())){
                 return c;
             
                 }
@@ -43,7 +43,7 @@ public class ItemServicelmpl implements ItemService {
         boolean existe = false;
         for(Item c : listaItems) {
             //busca si ya existe el articulo en el carrrito
-            if(Objects.equals(c.getIdArticulo(),item.getIdArticulo())) {
+            if(Objects.equals(c.getIdProducto(),item.getIdProducto())) {
                 //valida si aun puede colocar un item adicional -segun existencias
                 if(c.getCantidad() < item.getExistencias()) {
                     //incrementa en uno la cantidad de elementos 
@@ -72,7 +72,7 @@ public class ItemServicelmpl implements ItemService {
         var existe = false;
         for(Item c : listaItems) {
             ++posicion;
-            if(Objects.equals(c.getIdArticulo(),item.getIdArticulo())) {
+            if(Objects.equals(c.getIdProducto(),item.getIdProducto())) {
                 existe = true;
                 break;
             
@@ -89,7 +89,7 @@ public class ItemServicelmpl implements ItemService {
     @Override
     public void actualiza(Item item) {
         for(Item i : listaItems) {
-            if(Objects.equals(i.getIdArticulo(), item.getIdArticulo())) {
+            if(Objects.equals(i.getIdProducto(), item.getIdProducto())) {
                 i.setCantidad(item.getCantidad());
                 break;
             }

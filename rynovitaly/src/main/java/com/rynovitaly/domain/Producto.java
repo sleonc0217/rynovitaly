@@ -18,8 +18,10 @@ public class Producto implements Serializable{
     private Long idProducto;
     private String nombre;
     private String descripcion;
+    private String detalle;
     private double precio;
     private int  unidades;
+    private int existencias;
     private String marca;
     private boolean activo;
     
