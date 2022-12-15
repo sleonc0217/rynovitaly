@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Puntos de venta</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+                <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+                <link href="css/dashboard.css" rel="stylesheet" type="text/css"/>
+                <script th:src="@{/webjars/jquery/jquery.min.js}"></script>    
+                <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>     
+                <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script> 
+                <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+                    </head>
+                    <body>
+                        <header class="header">
+
+                            <div class="content-logo">
+                                <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/ryno.png?alt=media&token=d4e82120-8df5-421b-9041-0f96f7d5a5b3" alt="logo"/>
+                                <h2 class="marca">Ryno Vitaly</h2>
+                            </div>
+                            <nav class="nav">
+                                <ul   sec:authorize="hasRole('ROLE_VENDEDOR')">
+                                    <li><a href="/">Inicio</a></li>
+                                    <li><a href="#">Carrito</a></li>
+                                    <li><a href="/puntosDeVenta.html">Puntos de venta</a></li>
+                                    <li><a href="#">Contactenos</a></li>
+                                    <li class="ingreso"><a href="#">Ingresar o Registrarse</a></li>
+                                </ul>
+                            </nav>
+
+                        </header>
+
+                        <div class="forma">
+                            <h1 class="titulo-prinicpal">Visítanos en todo el país </h1>
+                        </div>       
+
+
+                        <div>
+                             <h2 class="titulo">San José</h2>  
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d62876.59789855253!2d-84.0269824!3d9.9516416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1669516373493!5m2!1ses!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                            
+
+                        <div> 
+                             <h2 class="titulo">Alajuela</h2>         
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31430.9651345469!2d-84.22244154159542!3d10.027532051474234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9c871fbddb3%3A0xb1f90fbc26bf36cb!2sProvincia%20de%20Alajuela%2C%20Alajuela!5e0!3m2!1ses!2scr!4v1669516409344!5m2!1ses!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                                    
+
+                        <div>
+                            <h2 class="titulo">Cartago</h2>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62879.67874092798!2d-84.14836469661168!3d9.935628376309396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e342c50d15c5%3A0xe6746a6a9f11b882!2zU2FuIEpvc8Op!5e0!3m2!1ses!2scr!4v1669516443631!5m2!1ses!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                            <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <footer th:fragment="footer">
+                                    <p class="p1">RinoVitaly © 2022 Derechos Reservados </p>
+                                    <p class="p2">Diseñado por CodeLabs</p>
+                                    <a th:href="@{/(lang=es)}">ES</a> | 
+                                    <a th:href="@{/(lang=en)}">EN</a>
+
+
+                                    <form class="logout" method="POST" th:action="@{/logout}" style="display:inline">
+                                        <a href="#" onclick="this.parentNode.submit();">Logout</a>
+                                    </form>
+
+
+
+
+                                </footer>
+
+                                </body>
+                                </html>
+

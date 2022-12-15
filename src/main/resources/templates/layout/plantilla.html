@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head  th:fragment="head">
+        <title>RynoVitaly</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+                <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+                <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+                <srcipt src="https://unpkg.com/@popperjs/core@2"></script>
+                <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+                <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+                <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+                </head>
+
+                <body>
+
+                    <header th:fragment="header">
+
+                        <div class="content-logo">
+                            <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/ryno.png?alt=media&token=d4e82120-8df5-421b-9041-0f96f7d5a5b3" alt="logo"/>
+                            <h2 class="marca">[[#{aplicacion.titulo}]]</h2>
+                        </div>
+                        <nav >
+                            <ul>
+                                <li><a th:href="@{/}">[[#{accion.Inicio}]]</a></li>
+                                <li><a href="#">[[#{accion.Carrito}]]</a></li>
+                                <li><a href="/puntosDeVenta.html">[[#{accion.PuntosVenta}]]</a></li>
+                                <li><a href="#">[[#{accion.Contactenos}]]</a></li>
+                                <li  sec:authorize="isAuthenticated()"><a href="#">Bienvenido <span sec:authentication="name"></span></a></li>
+
+                                <li class="nav-item px-2" sec:authorize="hasRole('ROLE_ADMIN')"><a href="/menuAdmin.html">Dashboard</a></li>
+
+
+
+
+
+                                <li  sec:authorize="!isAuthenticated()"  class="ingreso">
+                                    <from method="POST"
+                                          th:action="@{/login}">
+                                        <a href="/login">Ingresar o Registrarse</a></li>
+                                </from>
+                                </li>
+                            </ul>
+
+
+
+
+                        </nav>
+
+
+
+
+
+
+                    </header>
+                    <div class="forma"></div>
+
+
+
+
+
+
+
+
+                    <footer th:fragment="footer">
+                        <p class="p1">[[#{plantilla.derechos}]] </p>
+                        <p class="p2">[[#{plantilla.firma}]]</p>
+                        <a th:href="@{/(lang=es)}">ES</a> | 
+                        <a th:href="@{/(lang=en)}">EN</a>
+
+
+                        <form class="logout" method="POST" th:action="@{/logout}" style="display:inline">
+                            <a href="#" onclick="this.parentNode.submit();">Logout</a>
+                        </form>
+
+
+
+
+                    </footer>
+
+                </body>
+                </html>

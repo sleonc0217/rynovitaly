@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://wwww.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Dashboard - Productos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+        <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="forma"></div>
+        <div class="contenido">
+
+            <button class="agregar"><a th:href="@{/producto/nuevo}">Nuevo Producto</a></button>
+            <div th:if="${productos !=null and !productos.empty}">
+                <table border="1">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Unidades</th>
+                        <th>Marca</th>
+                        <th>Activo</th>
+                        <th>Eliminar</th>
+                        <th>Modificar</th>
+                    </tr>
+                    <tr th:each="producto : ${productos}">
+                        <td>[[${producto.nombre}]]</td>
+                        <td>[[${producto.descripcion}]]</td>
+                        <td style="text-align: right">[[${#numbers.formatDecimal(producto.precio,3,2)}]]</td>
+                        <td style="text-align: center">[[${producto.unidades}]]</td>
+                        <td>[[${producto.marca}]]</td>
+                        <td style="text-align: center">
+                            <input   class="check" type="checkbox" 
+                                     name="activo" 
+                                     th:checked="${producto.activo}" 
+                                     disabled="true"/>
+                        </td>                        
+
+                        <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"> <button class="eliminar" >Eliminar</button></a></td>
+                        <td><a th:href="@{/producto/modificar/}+${producto.idProducto}"><button class="editar" >Modificar</button></a></td>
+                    </tr>            
+                </table>
+            </div>
+
+            <div th:if="${productos ==null or productos.empty}">
+                <h2>No hay productos que mostrar</h2>
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>

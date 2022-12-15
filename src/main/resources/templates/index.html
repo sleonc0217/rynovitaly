@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head  th:replace="layout/plantilla :: head">
+
+        <body>
+            <header th:replace="layout/plantilla :: header"/>
+            <div class="forma"></div>
+            <div class="context-principal">
+                <h1 class="texto-principal">Expande tu potencial deportivo con Ryno Vitaly!</h1>
+            </div>
+
+            <button class="btn-promo">Ver promo!</button>
+            <button class="btn-sus">Suscribirme</button>
+
+
+            <img class="pre-entreno" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/PreEntreno-removebg-preview(1).png?alt=media&token=ddbe22ab-2a36-4265-832d-297791efa78a" alt="pre-entreno"/>
+            <img class="prote" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/proteina_1_-removebg-preview.png?alt=media&token=eabda1a6-d0e7-4b80-8803-8084ec623956" alt="pre-entreno"/>
+
+            <section th:replace="carrito/fragmentosCarrito :: listadoProductos"/>
+            
+            <script>
+              function addCard(formulario){
+                  var valor=formulario.elements[0].value;
+                  var url = '/carrito/agregar';
+                  url = url +'/' +valor;
+                  $("#resultsBlock").load(url);
+              }
+           </script>
+
+            <footer th:replace="layout/plantilla :: footer"/>
+        </body>
+</html>

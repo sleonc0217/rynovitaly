@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+                <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+                <link href="css/dashboard.css" rel="stylesheet" type="text/css"/>
+                <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+                    </head>
+                    <body>
+                        <header>
+
+                            <div class="content-logo">
+                                <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/rynovitaly.appspot.com/o/ryno.png?alt=media&token=d4e82120-8df5-421b-9041-0f96f7d5a5b3" alt="logo"/>
+                                <h2 class="marca">Ryno Vitaly</h2>
+                            </div>
+                            <nav class="nav">
+                                <ul>
+                                    <li><a href="/">Inicio</a></li>
+                                    <li><a href="#">Carrito</a></li>
+                                    <li><a href="#">Puntos de venta</a></li>
+                                    <li><a href="#">Contactenos</a></li>
+                                        <li  sec:authorize="isAuthenticated()"><a href="#">Bienvenido <span sec:authentication="name"></span></a></li>
+                                </ul>
+                            </nav>
+
+                        </header>
+
+
+                        <div class="forma"></div>
+
+                        <a  class="link"href="/producto/listado"><div class="productos"><h3>Productos</h3></div></a>
+                        <a  class="link"href="/usuario/listado"><div class="usuarios"><h3>Usuarios</h3></div></a>
+                        <div class="codigos"><h3>Códigos</h3></div>
+                        <a class="link"href="/categoria/listado"><div class="categorias"><h3>Categorias</h3></div></a>        
+
+
+
+
+
+                        <footer th:fragment="footer">
+                            <p class="p1">RinoVitaly © 2022 Derechos Reservados </p>
+                            <p class="p2">Diseñado por CodeLabs</p>
+                            <a th:href="@{/(lang=es)}">ES</a> | 
+                            <a th:href="@{/(lang=en)}">EN</a>
+
+
+                            <form class="logout" method="POST" th:action="@{/logout}" style="display:inline">
+                                <a href="#" onclick="this.parentNode.submit();">Logout</a>
+                            </form>
+
+
+
+
+                        </footer>
+
+
+                    </body>
+                    </html>
+

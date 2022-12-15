@@ -1,0 +1,59 @@
+.usuarios{
+    height: 220px;
+    width: 220px;
+    background-color: #FFB905;
+    border-radius: 10px;
+    box-shadow: 5px 10px  rgba(0, 0, 0, 0.541);
+    position: absolute;
+    top:3cm;
+    left: 1cm;
+    cursor: pointer;
+}
+
+.productos{
+    height: 220px;
+    width: 220px;
+    background-color: rgb(213, 4, 4);
+    border-radius: 10px;
+    box-shadow: 5px 10px  rgba(0, 0, 0, 0.541);
+    position: absolute;
+    top:11cm;
+    left: 8cm;
+ cursor: pointer;   
+}
+
+.codigos{
+    height: 220px;
+    width: 220px;
+    background-color: rgb(46, 198, 0);
+    border-radius: 10px;
+    box-shadow: 5px 10px  rgba(0, 0, 0, 0.541);
+    position: absolute;
+    top:3cm;
+    left: 16cm;
+     cursor: pointer;
+    
+}
+
+.categorias{
+    height: 220px;
+    width: 220px;
+    background-color: rgb(1, 41, 239);
+    border-radius: 10px;
+    box-shadow: 5px 10px  rgba(0, 0, 0, 0.541);
+    position: absolute;
+    top:11cm;
+    left: 24cm;
+     cursor: pointer;
+}
+.codigos, .categorias, .productos, .usuarios> h3{
+    text-align: center;
+    color: white;
+    font-size: 45px;
+}
+h3{
+    padding-top: 90px;
+}
+.link{
+    filter: none;
+}
